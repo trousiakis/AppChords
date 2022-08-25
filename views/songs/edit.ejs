@@ -1,0 +1,56 @@
+<%- layout('/layouts/boilerplate') %>
+
+<link rel='stylesheet' href='/styles/new.css' />
+<title>New Song</title> 
+</head>
+
+<body onLoad="window.scrollBy(0,1000)">
+    <%- include('../partials/navbar'); %>
+    <form action="/songs/<%= song.id %>?_method=PUT" method="POST">
+        <div class="work-together">
+            <h1>Share your knowledge about music!</h1>
+            <img src="/styles/assets/bird.svg" alt="A bird listens to music">
+        </div>
+        <div class="form-container">
+
+            <div class="form-title">
+                <h1>Edit Track<h1>
+            </div>
+            <div class="form-left">
+                <div class="inputs">
+                    <div class="item">
+                        <label for="title">Title</label>
+                        <input required type="text" id="title" name="song[title]" placeholder="Enter a title" value="<%= song.title %>">
+                    </div>
+                    <div class="item">
+                        <label for="lyricist">Lyricist</label>
+                        <input required type="text" id="lyricist" name="song[lyricist]" placeholder="Enter a lyricist" value="<%= song.lyricist %>">
+                    </div>
+                    <div class="item">
+                        <label for="composer">Composer</label>
+                        <input required type="text" id="composer" name="song[composer]" placeholder="Enter a composer" value="<%= song.composer %>">
+                    </div>
+                    <div class="item">
+                        <label for="toneKey">Tone Key</label>
+                        <input required type="text" id="toneKey" name="song[toneKey]" placeholder="Enter a key" value="<%= song.toneKey %>">
+                    </div>
+                    <div class="item">
+                        <label for="tuning">Tuning</label>
+                        <input required type="text" id="tuning" name="song[tuning]" placeholder="( e.g. E A D G B E )" value="<%= song.tuning %>">
+                    </div>
+                </div>
+            </div>
+            <div class="form-right">
+                <div class="lyrics">
+                    <label for="lyrics">Lyrics</label>
+                    <textarea required id="lyricsInput" cols="29" rows="20" placeholder="Enter Song's Lyrics" id="lyrics"
+                        name="song[lyrics]" ><%= song.lyrics %></textarea>
+                </div>
+            </div>
+            <div class="form-bottom">
+                <button>Update Song</button>
+            </div>
+
+        </div>
+    </form>
+</body>

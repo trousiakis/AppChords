@@ -1,0 +1,72 @@
+body {
+    box-sizing: border-box;
+    background: rgb(255,255,255);
+background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(95,5,213,0.6138830532212884) 62%);
+    
+}
+
+
+.container{
+    width: calc(100vw - 6rem);
+    height: calc(100vh - 8rem);
+    background: url( './assets/guitarist.svg' );
+    background-size: 20rem;
+    background-repeat: no-repeat;
+    background-position: 50% 80%;
+    font-family: 'Nunito', sans-serif;
+    gap: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    padding: 3rem;
+
+    
+}
+.buttons-area {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.3em;
+}
+.btn {
+    text-decoration: none;
+    border: 0;
+    background: 0;
+    cursor: pointer;
+    font-weight: 700;
+    background: rgb(108,99,255);
+    color: white;
+    padding: .8em 0.5em .8em 0.5em;
+    border-radius: .3rem;
+    transition: transform 300ms ease-in-out;
+}
+.btn:hover {
+    transform: scale(1.1);
+}
+
+.one {
+    margin-right: 1em;
+}
+
+
+
+@media (min-width:80rem) {
+    body {
+        background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(119, 76, 248, 0.614) 62%);
+    }
+    .container{
+        justify-content: center;
+        background-position: 90% 60% ;
+        background-size: 40rem;
+
+    }
+
+    .text-area > h1 {
+        font-size: 4rem;
+    }
+    .text-area > p {
+        font-size: 1.5rem;
+    }
+}

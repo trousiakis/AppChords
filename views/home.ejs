@@ -1,0 +1,20 @@
+<%- layout('/layouts/boilerplate') %>
+<link rel="stylesheet" href="styles/home.css">
+<title>Home</title>
+</head>
+
+<body>
+    <%- include('partials/navbar'); %>
+    <div class="container">
+        
+
+        <div class="text-area">
+            <h1>All chords for your favorite songs</h1>
+            <p>Find a song you want to play or share your knowledge by uploading chords of songs you like!</p>
+        </div>
+        <div class="buttons-area">
+            <a href="/songs" class="btn one">Browse our songs</a>
+            <a href="/songs/new" class="btn">Add New Song</a>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,52 @@
+<%- layout('/layouts/boilerplate') %>
+<link rel="stylesheet" href="/styles/index.css">
+<title>Songs</title>
+</head>
+
+<body onLoad="window.scrollBy(0,650)">
+ 
+
+    <div  class="container">
+        <%- include('../partials/navbar'); %>
+        <div class="work-together">
+            <h1>Share your knowledge about music!</h1>
+            <img src="/styles/assets/workTogether.svg" alt="Two people sharing data">
+        </div>
+        <div class="song-cards">
+            <div class="title">
+                <h1>A list of our songs</h1>
+                <hr>
+            </div>
+            <% for (let song of songs) { %>
+                <div>
+                <div class="song song-position">
+                    <a href="/songs/<%= song._id%>">
+                        <%= song.title %>
+                    </a>
+                    <hr>
+                    <p>Lyricist: <span><%= song.lyricist %></span></p>
+                    <p>Composer: <span><%= song.composer %></span></p>
+                    <p>Key: <span><%= song.toneKey %></span></p>
+                    <p>Tuning: <span><%= song.tuning %></span></p>
+                    <div class="song song-lyrics">
+                        <a href="/songs/<%= song._id%>">
+                            <%= song.title %>
+                        </a>
+                        <hr>
+                        <p class="lyrics-label">Lyrics</p>
+                        <p class="lyrics-card"><%= song.lyrics.substr(0,250) %></p>
+                    </div>
+                </div>
+                <!-- <div class="song song-lyrics">
+                    <a href="/songs/<%= song._id%>">
+                        <%= song.title %>
+                    </a>
+                    <hr>
+                    <p class="lyrics-label">Lyrics</p>
+                    <p class="lyrics-card"><%= song.lyrics.substr(0,250) %></p>
+                </div> -->
+            </div>
+                <% } %>  
+        </div>
+    </div>
+</body>

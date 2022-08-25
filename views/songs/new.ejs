@@ -1,0 +1,55 @@
+<%- layout('/layouts/boilerplate') %>
+    <link rel='stylesheet' href='/styles/new.css' />
+    <title>New Song</title>
+</head>
+
+<body>
+    <%- include('../partials/navbar'); %>
+        <div class="work-together">
+            <h1>Share your knowledge about music!</h1>
+            <img src="/styles/assets/piano.svg" alt="Two people playing piano">
+        </div>
+    <form action="/songs" method="POST">
+        <div class="form-container">
+
+            <div class="form-title">
+                <h1>Enter Your Track<h1>
+            </div>
+            <div class="form-left">
+                <div class="inputs">
+                    <div class="item">
+                        <label for="title">Title</label>
+                        <input required type="text" id="title" name="song[title]" placeholder="Enter a title">
+                    </div>
+                    <div class="item">
+                        <label for="lyricist">Lyricist</label>
+                        <input required type="text" id="lyricist" name="song[lyricist]" placeholder="Enter a lyricist">
+                    </div>
+                    <div class="item">
+                        <label for="composer">Composer</label>
+                        <input required type="text" id="composer" name="song[composer]" placeholder="Enter a composer">
+                    </div>
+                    <div class="item">
+                        <label for="toneKey">Tone Key</label>
+                        <input required type="text" id="toneKey" name="song[toneKey]" placeholder="Enter a key">
+                    </div>
+                    <div class="item">
+                        <label for="tuning">Tuning</label>
+                        <input required type="text" id="tuning" name="song[tuning]" placeholder="( e.g. E A D G B E )">
+                    </div>
+                </div>
+            </div>
+            <div class="form-right">
+                <div class="lyrics">
+                    <label for="lyrics">Lyrics</label>
+                    <textarea required id="lyricsInput" cols="29" rows="20" placeholder="Enter Song's Lyrics" id="lyrics"
+                        name="song[lyrics]"></textarea>
+                </div>
+            </div>
+            <div class="form-bottom">
+                <button>Add Song</button>
+            </div>
+
+        </div>
+    </form>
+</body>

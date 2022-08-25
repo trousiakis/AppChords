@@ -1,0 +1,29 @@
+<%- layout('/layouts/boilerplate') %>
+<link rel="stylesheet" href="/styles/show.css">
+<title>Show</title>
+</head>
+
+<body>
+    <%- include('../partials/navbar'); %>
+    <div class="container">
+        <div class="full-song">
+            <h1>
+                <%= song.title %>
+            </h1>
+            <!-- <p>
+                <%= song.lyrics %>
+            </p> -->
+            <textarea disabled rows="100" class="song-lyrics"><%= song.lyrics %></textarea>
+        </div>
+
+        <div class="buttons-area">
+            <a class="btn" href="/songs">All Songs</a>
+            <div class="button-group">
+                <a class="btn" href="/songs/<%= song._id %>/edit">Edit</a>
+                <form action="/songs/<%= song._id %>?_method=DELETE" method="POST">
+                    <button class="btn btn-delete">Delete Song</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
